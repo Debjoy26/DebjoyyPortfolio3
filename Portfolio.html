@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Debjoy Sarkar — Portfolio</title>
+
+<title>Debjoy Sarkar — Software Developer · AI/ML & Full-Stack</title>
+
+<meta name="description" content="Debjoy Sarkar — B.Tech IT developer in Kolkata building at the seam of software and intelligence: REST backends, React frontends, computer vision pipelines, and LLM tooling. Selected projects in Python, Django, Spring Boot, Docker, and OpenCV." />
+<meta name="author" content="Debjoy Sarkar" />
+<meta name="keywords" content="Debjoy Sarkar, software developer, AI ML engineer, full-stack developer, Django, React, Spring Boot, computer vision, LLM, Docker, Kolkata, portfolio" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#2d5f4a" />
+<meta name="color-scheme" content="light" />
+
+<link id="canonicalLink" rel="canonical" href="/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Debjoy Sarkar — Portfolio" />
+<meta property="og:title" content="Debjoy Sarkar — Software Developer · AI/ML & Full-Stack" />
+<meta property="og:description" content="B.Tech IT developer in Kolkata building across software & intelligence — backends, frontends, computer vision, and LLM tooling." />
+<meta property="og:url" id="ogUrl" content="/" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:image" id="ogImage" content="" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Debjoy Sarkar — portfolio cover" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Debjoy Sarkar — Software Developer · AI/ML & Full-Stack" />
+<meta name="twitter:description" content="B.Tech IT developer in Kolkata building across software & intelligence." />
+<meta name="twitter:image" id="twitterImage" content="" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f2ede3'/%3E%3Ctext x='50' y='68' font-family='serif' font-size='58' font-weight='600' text-anchor='middle' fill='%231e1c18'%3ED%3C/text%3E%3Ccircle cx='78' cy='30' r='6' fill='%23c8402d'/%3E%3C/svg%3E" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --paper:#f2ede3;
@@ -55,7 +86,6 @@
 
   .shell{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 32px}
 
-  /* ============ MASTHEAD ============ */
   .masthead{
     border-bottom:3px double var(--ink);
     padding:22px 0 16px;
@@ -77,7 +107,6 @@
   }
   .mast-right b{color:var(--ink);font-weight:500}
 
-  /* ============ HERO ============ */
   .hero{padding:60px 0 48px;position:relative}
   .hero-grid{
     display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;
@@ -105,7 +134,6 @@
 
   .marginalia{position:relative;padding-top:16px}
 
-  /* optional portrait */
   .portrait{
     display:inline-block;
     margin-bottom:22px;
@@ -126,7 +154,6 @@
     margin-top:5px;text-align:center;
   }
 
-  /* margin index — a small annotated contents block */
   .margin-index{
     border-top:1px solid var(--accent2-line);
     padding-top:16px;
@@ -162,7 +189,6 @@
     opacity:.7;
   }
 
-  /* the responsive margin note */
   .margin-note{
     margin-top:22px;
     padding-top:16px;
@@ -220,7 +246,6 @@
   .qa-btn.accent:hover{background:var(--accent);color:var(--paper)}
   .qa-btn svg{width:12px;height:12px}
 
-  /* ============ TABS ============ */
   .tabs{
     position:sticky;top:0;z-index:40;
     background:var(--paper);
@@ -243,7 +268,6 @@
   .tabs a.active{background:var(--accent2);color:var(--paper)}
   .tabs a.active .n{color:var(--hi)}
 
-  /* ============ SECTION ============ */
   .sec{padding:70px 0 30px}
   .sec-head{
     display:flex;align-items:baseline;gap:20px;margin-bottom:34px;
@@ -265,7 +289,6 @@
     border-left:1px solid var(--rule);padding-left:18px;
   }
 
-  /* ============ FILTER BAR ============ */
   .filter-bar{
     display:flex;flex-wrap:wrap;align-items:center;gap:10px;
     margin-bottom:22px;
@@ -303,7 +326,6 @@
   }
   .filter-clear.visible{display:inline-block}
 
-  /* ============ PROJECT LEDGER ============ */
   .ledger{
     display:flex;flex-direction:column;gap:0;
     border-top:2px solid var(--ink);
@@ -353,7 +375,6 @@
   .row:hover .mark,.row.open .mark{opacity:1;transform:rotate(0deg) scale(1.1)}
   .row.open .mark{transform:rotate(90deg) scale(1.1)}
 
-  /* EXPANDED DETAIL */
   .row-detail{
     grid-column:2 / -1;
     margin-top:22px;
@@ -423,7 +444,6 @@
   }
   .no-results.visible{display:block}
 
-  /* ============ EXPERIENCE ============ */
   .xp{border-top:1px solid var(--rule)}
   .xp .row{
     grid-template-columns:52px 200px 1fr auto;
@@ -454,7 +474,6 @@
     .xp .badge{grid-column:2;justify-self:start}
   }
 
-  /* ============ SKILLS ============ */
   .notebook{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
     border-top:2px solid var(--ink);
@@ -483,7 +502,6 @@
     .nb-col:last-child{padding-left:0}
   }
 
-  /* ============ LEADERSHIP ============ */
   .pins{
     display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px;
   }
@@ -510,7 +528,6 @@
   .pin .org{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em;margin-top:6px}
   @media(max-width:700px){.pins{grid-template-columns:1fr}}
 
-  /* ============ CERTS / EDU ============ */
   .colophon{display:grid;grid-template-columns:1.2fr 1fr;gap:60px}
   @media(max-width:820px){.colophon{grid-template-columns:1fr;gap:34px}}
   .edu-title{
@@ -531,76 +548,6 @@
   .cert-list li:first-child{border-top:1px dotted var(--rule)}
   .cert-list .by{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em}
 
-  /* ============ GUEST NOTE ============ */
-  .guest-note{
-    margin-top:40px;
-    border-top:1px dashed var(--accent2-line);
-    padding-top:28px;
-  }
-  .guest-note .gn-label{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--accent2);
-    margin-bottom:10px;
-  }
-  .guest-note .gn-hint{
-    font-family:var(--hand);font-size:19px;color:var(--ink-soft);
-    margin-bottom:12px;
-    line-height:1.3;
-  }
-  .gn-input-row{
-    display:flex;gap:10px;flex-wrap:wrap;
-  }
-  .gn-input{
-    flex:1;min-width:200px;
-    font-family:var(--mono);font-size:12px;
-    background:transparent;border:1px solid var(--rule);
-    padding:9px 12px;color:var(--ink);outline:none;
-    transition:.2s;border-radius:2px;
-  }
-  .gn-input:focus{border-color:var(--accent2);background:rgba(255,255,255,.4)}
-  .gn-input::placeholder{color:var(--ink-soft);opacity:.65}
-  .gn-btn{
-    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
-    padding:9px 16px;border:1px solid var(--accent2);
-    background:var(--accent2);color:var(--paper);
-    cursor:pointer;transition:.2s;border-radius:2px;
-  }
-  .gn-btn:hover{background:transparent;color:var(--accent2)}
-  .gn-notes{
-    display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;
-  }
-  .gn-paper{
-    position:relative;
-    background:#fbf7ec;border:1px solid var(--rule);
-    padding:12px 14px 12px 16px;
-    max-width:280px;min-width:180px;
-    font-family:var(--hand);font-size:18px;line-height:1.25;
-    color:var(--ink);
-    box-shadow:1px 2px 0 rgba(30,28,24,.05);
-    transform:rotate(-.6deg);
-  }
-  .gn-paper:nth-child(2n){transform:rotate(.5deg)}
-  .gn-paper:nth-child(3n){transform:rotate(-.3deg)}
-  .gn-paper .gn-meta{
-    font-family:var(--mono);font-size:9px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--ink-soft);
-    margin-top:8px;opacity:.7;
-  }
-  .gn-paper .gn-x{
-    position:absolute;top:4px;right:6px;
-    background:none;border:none;cursor:pointer;
-    color:var(--ink-soft);font-size:12px;
-    opacity:0;transition:.2s;line-height:1;
-    padding:2px;
-  }
-  .gn-paper:hover .gn-x{opacity:.7}
-  .gn-paper .gn-x:hover{opacity:1;color:var(--accent)}
-  .gn-empty{
-    font-family:var(--hand);font-size:16px;color:var(--ink-soft);
-    opacity:.6;margin-top:14px;
-  }
-
-  /* ============ FOOTER ============ */
   footer{
     margin-top:100px;border-top:3px double var(--ink);
     padding:36px 0 50px;
@@ -634,7 +581,6 @@
     letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;gap:12px;
   }
 
-  /* ============ TOAST ============ */
   .toast{
     position:fixed;bottom:24px;left:50%;transform:translate(-50%, 80px);
     background:var(--accent2);color:var(--paper);
@@ -648,12 +594,67 @@
   .toast.show{opacity:1;transform:translate(-50%, 0)}
   .toast::before{content:"✓";color:var(--hi);font-size:14px}
 
-  /* ============ REVEAL ============ */
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
+
+  .noscript-fallback{padding:22px 0;font-family:var(--mono);font-size:12px;color:var(--ink-soft);border-bottom:1px solid var(--rule);line-height:1.7}
+  .noscript-fallback h1{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .noscript-fallback a{color:var(--accent2)}
 </style>
+
+<script type="application/ld+json" id="ld-json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#person",
+      "name": "Debjoy Sarkar",
+      "givenName": "Debjoy",
+      "familyName": "Sarkar",
+      "url": "/",
+      "jobTitle": "Software Developer",
+      "description": "B.Tech IT developer building across software and intelligence — REST backends, React frontends, computer vision, and LLM tooling.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "RCC Institute of Information Technology",
+        "parentOrganization": { "@type": "Organization", "name": "MAKAUT" }
+      },
+      "knowsAbout": ["Python", "Django", "Spring Boot", "React", "Docker", "OpenCV", "Computer Vision", "LLM", "REST APIs", "Ethical Hacking"],
+      "sameAs": [
+        "https://linkedin.com/in/debjoyysarkar",
+        "https://github.com/Debjoy26"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "#website",
+      "url": "/",
+      "name": "Debjoy Sarkar — Portfolio",
+      "inLanguage": "en",
+      "publisher": { "@id": "#person" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<noscript>
+  <div class="shell noscript-fallback">
+    <h1>Debjoy Sarkar — Software Developer</h1>
+    <p>B.Tech IT developer in Kolkata building at the seam of software and intelligence: REST backends, React frontends, computer vision pipelines, and LLM tooling.</p>
+    <p>Selected projects: AI Chatbot with Docker &amp; Auth · SensiTour — AI Travel Guide · Plant Health via Thermal Imaging · Mini ServiceDesk · Warehouse Intelligence Platform · YOLO Object Detection · IEI Student Chapter Website · Code and Seek.</p>
+    <p>Stack: Python · Java · JavaScript · Django · Spring Boot · React · Docker · OpenCV · TensorFlow · Ollama · Kali Linux.</p>
+    <p>Contact: <a href="mailto:debjoyofficial5@gmail.com">debjoyofficial5@gmail.com</a> · <a href="https://linkedin.com/in/debjoyysarkar">LinkedIn</a> · <a href="https://github.com/Debjoy26">GitHub</a></p>
+  </div>
+</noscript>
 
 <div class="shell">
 
@@ -665,7 +666,7 @@
     <div class="mast-right" id="mastRight"></div>
   </header>
 
-  <section class="hero">
+  <section class="hero" aria-label="Introduction">
     <div class="hero-grid">
       <div>
         <h1 id="heroHeadline"></h1>
@@ -676,7 +677,7 @@
     </div>
   </section>
 
-  <nav class="tabs" id="tabs">
+  <nav class="tabs" id="tabs" aria-label="Sections">
     <a href="#work" class="active"><span class="n">01</span>Projects</a>
     <a href="#xp"><span class="n">02</span>Experience</a>
     <a href="#stack"><span class="n">03</span>Stack</a>
@@ -684,62 +685,53 @@
     <a href="#contact"><span class="n">05</span>Contact</a>
   </nav>
 
-  <section class="sec" id="work">
-    <div class="sec-head">
-      <div class="index-num">01</div>
-      <h2>Selected <em>projects</em></h2>
-      <div class="count"><span id="visibleCount">00</span> entries</div>
-    </div>
-
-    <div class="filter-bar">
-      <input type="search" class="filter-search" id="filterSearch" placeholder="Search projects, stacks…" autocomplete="off"/>
-      <div class="filter-tags" id="filterTags"></div>
-      <button class="filter-clear" id="filterClear" type="button">clear ✕</button>
-    </div>
-
-    <div class="ledger" id="ledger"></div>
-    <div class="no-results" id="noResults">no projects match that filter — <span style="font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em">try clearing it</span></div>
-  </section>
-
-  <section class="sec" id="xp">
-    <div class="sec-head">
-      <div class="index-num">02</div>
-      <h2>Where I've <em>worked</em></h2>
-      <div class="count"><span id="xpCount">00</span> entries</div>
-    </div>
-    <div class="xp" id="xpList"></div>
-  </section>
-
-  <section class="sec" id="stack">
-    <div class="sec-head">
-      <div class="index-num">03</div>
-      <h2>Stack &amp; <em>tools</em></h2>
-      <div class="count">by domain</div>
-    </div>
-    <div class="notebook" id="notebook"></div>
-  </section>
-
-  <section class="sec" id="about">
-    <div class="sec-head">
-      <div class="index-num">04</div>
-      <h2>Background <em>&amp;</em> context</h2>
-      <div class="count">education · certs · campus</div>
-    </div>
-    <div class="colophon" id="colophon"></div>
-
-    <div class="guest-note">
-      <div class="gn-label">Leave a note</div>
-      <div class="gn-hint">visiting for a reason? drop a line — it stays on your screen only.</div>
-      <div class="gn-input-row">
-        <input type="text" class="gn-input" id="gnInput" placeholder="your note…" maxlength="140" autocomplete="off"/>
-        <button class="gn-btn" id="gnAdd" type="button">pin it</button>
+  <main>
+    <section class="sec" id="work" aria-labelledby="workHeading">
+      <div class="sec-head">
+        <div class="index-num">01</div>
+        <h2 id="workHeading">Selected <em>projects</em></h2>
+        <div class="count"><span id="visibleCount">00</span> entries</div>
       </div>
-      <div class="gn-notes" id="gnNotes"></div>
-      <div class="gn-empty" id="gnEmpty">no notes yet — yours would be the first.</div>
-    </div>
-  </section>
 
-  <footer id="contact">
+      <div class="filter-bar">
+        <input type="search" class="filter-search" id="filterSearch" placeholder="Search projects, stacks…" autocomplete="off" aria-label="Search projects"/>
+        <div class="filter-tags" id="filterTags" role="group" aria-label="Filter by tag"></div>
+        <button class="filter-clear" id="filterClear" type="button">clear ✕</button>
+      </div>
+
+      <div class="ledger" id="ledger"></div>
+      <div class="no-results" id="noResults">no projects match that filter — <span style="font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em">try clearing it</span></div>
+    </section>
+
+    <section class="sec" id="xp" aria-labelledby="xpHeading">
+      <div class="sec-head">
+        <div class="index-num">02</div>
+        <h2 id="xpHeading">Where I've <em>worked</em></h2>
+        <div class="count"><span id="xpCount">00</span> entries</div>
+      </div>
+      <div class="xp" id="xpList"></div>
+    </section>
+
+    <section class="sec" id="stack" aria-labelledby="stackHeading">
+      <div class="sec-head">
+        <div class="index-num">03</div>
+        <h2 id="stackHeading">Stack &amp; <em>tools</em></h2>
+        <div class="count">by domain</div>
+      </div>
+      <div class="notebook" id="notebook"></div>
+    </section>
+
+    <section class="sec" id="about" aria-labelledby="aboutHeading">
+      <div class="sec-head">
+        <div class="index-num">04</div>
+        <h2 id="aboutHeading">Background <em>&amp;</em> context</h2>
+        <div class="count">education · certs · campus</div>
+      </div>
+      <div class="colophon" id="colophon"></div>
+    </section>
+  </main>
+
+  <footer id="contact" aria-label="Contact">
     <div class="foot-grid">
       <div>
         <div class="kicker" style="color:var(--accent);margin-bottom:16px">Colophon</div>
@@ -759,6 +751,11 @@
    DATA
    ========================================================== */
 const DATA = {
+  seo: {
+    siteUrl: "",
+    ogImage: ""
+  },
+
   meta: {
     name: "Debjoy Sarkar",
     kicker: "Portfolio",
@@ -777,8 +774,6 @@ const DATA = {
   hero: {
     headline: "Builds<br>things that<br><em>think.</em><span class='dot'>●</span>",
     sub: "Software developer working where web engineering meets machine intelligence — REST backends, React frontends, computer vision pipelines, and LLM tooling. Currently curious about the space between security and systems.",
-    // margin remarks — one line per section, keyed by section id.
-    // shown in the margin as the visitor scrolls.
     marginNotes: {
       work: "every row opens — click one.",
       xp: "short list; most of the work lives in projects.",
@@ -976,6 +971,98 @@ const DATA = {
 };
 
 /* ==========================================================
+   SEO: keep head meta + JSON-LD in sync with DATA
+   ========================================================== */
+(function syncSEO(){
+  const resolved = (DATA.seo.siteUrl && DATA.seo.siteUrl.trim())
+    ? DATA.seo.siteUrl.trim().replace(/\/+$/, '')
+    : location.origin;
+  const pageUrl = resolved + '/';
+
+  const title = `${DATA.meta.name} — Software Developer · AI/ML & Full-Stack`;
+  const desc = `B.Tech IT developer in ${DATA.meta.location.replace(', IN','')}, building across software and intelligence — REST backends, React frontends, computer vision, and LLM tooling. Selected projects in Python, Django, Spring Boot, Docker, and OpenCV.`;
+
+  document.title = title;
+  const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el && val) el.setAttribute(attr, val); };
+  set('meta[name="description"]', 'content', desc);
+  set('meta[name="author"]', 'content', DATA.meta.name);
+  set('meta[property="og:title"]', 'content', title);
+  set('meta[property="og:description"]', 'content', desc);
+  set('#ogUrl', 'content', pageUrl);
+  set('meta[name="twitter:title"]', 'content', title);
+  set('meta[name="twitter:description"]', 'content', desc);
+  set('#canonicalLink', 'href', pageUrl);
+
+  const ld = document.getElementById('ld-json');
+  if (ld) {
+    const graph = JSON.parse(ld.textContent);
+    graph['@graph'].forEach(node => {
+      if (node['@type'] === 'Person') {
+        node.name = DATA.meta.name;
+        node.url = pageUrl;
+        node.sameAs = [DATA.meta.linkedinUrl, DATA.meta.githubUrl].filter(Boolean);
+        node.knowsAbout = Array.from(new Set(
+          DATA.stack.left.items.concat(DATA.stack.right.items)
+            .flatMap(([t]) => t.split(/[·,·]/).map(s => s.trim()))
+            .filter(Boolean)
+        ));
+      }
+      if (node['@type'] === 'WebSite') {
+        node.url = pageUrl;
+        node.name = title;
+      }
+    });
+    ld.textContent = JSON.stringify(graph);
+  }
+
+  function applyOgImage(url){
+    const og = document.getElementById('ogImage');
+    const tw = document.getElementById('twitterImage');
+    if (og) og.setAttribute('content', url);
+    if (tw) tw.setAttribute('content', url);
+  }
+
+  if (DATA.seo.ogImage && DATA.seo.ogImage.trim()) {
+    applyOgImage(DATA.seo.ogImage.trim());
+  } else {
+    try {
+      const c = document.createElement('canvas');
+      c.width = 1200; c.height = 630;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#f2ede3';
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#2d5f4a';
+      ctx.fillRect(0, 0, c.width, 6);
+
+      ctx.fillStyle = '#1e1c18';
+      ctx.font = '600 96px Georgia, "Times New Roman", serif';
+      ctx.fillText(DATA.meta.name, 80, 210);
+
+      ctx.fillStyle = '#4a463d';
+      ctx.font = '500 28px "Courier New", monospace';
+      ctx.fillText('Software developer · AI/ML & Full-Stack', 80, 280);
+      ctx.fillText(DATA.meta.location + ' · B.Tech IT · MAKAUT', 80, 320);
+
+      ctx.strokeStyle = '#cfc7b5';
+      ctx.beginPath();
+      ctx.moveTo(80, 380); ctx.lineTo(c.width - 80, 380); ctx.stroke();
+
+      ctx.fillStyle = '#1e1c18';
+      ctx.font = '500 24px "Courier New", monospace';
+      DATA.projects.slice(0, 3).forEach((p, i) => {
+        ctx.fillText('· ' + p.title, 80, 440 + i * 44);
+      });
+
+      ctx.fillStyle = '#2d5f4a';
+      ctx.font = '500 22px "Courier New", monospace';
+      ctx.fillText(resolved.replace(/^https?:\/\//, ''), 80, 590);
+
+      applyOgImage(c.toDataURL('image/png'));
+    } catch (e) {}
+  }
+})();
+
+/* ==========================================================
    RENDER
    ========================================================== */
 const nameParts = DATA.meta.name.split(' ');
@@ -993,7 +1080,7 @@ const emailBtn = document.createElement('button');
 emailBtn.className = 'qa-btn accent';
 emailBtn.type = 'button';
 emailBtn.id = 'copyEmailBtn';
-emailBtn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="10" height="10" rx="1"/><path d="M5 5h6v6"/></svg> Copy email`;
+emailBtn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="1"/><path d="M5 5h6v6"/></svg> Copy email`;
 heroActions.appendChild(emailBtn);
 
 if (DATA.meta.cv) {
@@ -1001,30 +1088,28 @@ if (DATA.meta.cv) {
   a.className = 'qa-btn';
   a.href = DATA.meta.cv;
   a.download = '';
-  a.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M4 6l4 4 4-4M3 13h10"/></svg> Résumé`;
+  a.setAttribute('rel', 'noopener');
+  a.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4 6l4 4 4-4M3 13h10"/></svg> Résumé`;
   heroActions.appendChild(a);
 }
 
 const contactLink = document.createElement('a');
 contactLink.className = 'qa-btn';
 contactLink.href = '#contact';
-contactLink.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg> Get in touch`;
+contactLink.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg> Get in touch`;
 heroActions.appendChild(contactLink);
 
-// ---- MARGINALIA (portrait + contents + live margin note + pencil) ----
 const marginalia = document.getElementById('marginalia');
 let marg = '';
-
 if (DATA.meta.photo) {
   marg += `
     <div class="portrait">
-      <img src="${DATA.meta.photo}" alt="${DATA.meta.name}">
+      <img src="${DATA.meta.photo}" alt="Portrait of ${DATA.meta.name}">
       <div class="cap">${DATA.meta.name}</div>
     </div>
   `;
 }
 
-// contents block — counts are derived from DATA, always accurate
 const contents = [
   { id: 'work',   n: '01', t: 'Projects',   c: String(DATA.projects.length).padStart(2,'0') },
   { id: 'xp',     n: '02', t: 'Experience', c: String(DATA.experience.length).padStart(2,'0') },
@@ -1032,7 +1117,6 @@ const contents = [
   { id: 'about',  n: '04', t: 'About',      c: `${DATA.leadership.length} roles` },
   { id: 'contact',n: '05', t: 'Contact',    c: '' }
 ];
-
 marg += `
   <div class="margin-index">
     <div class="mi-label">Contents</div>
@@ -1046,22 +1130,16 @@ marg += `
       `).join('')}
     </div>
   </div>
-`;
-
-marg += `
   <div class="margin-note">
     <div class="mn-label">Margin</div>
     <div class="mn-text" id="mnText">a small portfolio, kept in ink.</div>
   </div>
 `;
-
 if (DATA.hero.pencilNote) {
   marg += `<div class="pencil-note">${DATA.hero.pencilNote}</div>`;
 }
-
 marginalia.innerHTML = marg;
 
-// ---- FILTER TAGS ----
 const filterTagsEl = document.getElementById('filterTags');
 DATA.filterTags.forEach(t => {
   const btn = document.createElement('button');
@@ -1072,7 +1150,6 @@ DATA.filterTags.forEach(t => {
   filterTagsEl.appendChild(btn);
 });
 
-// ---- PROJECTS ----
 const ledger = document.getElementById('ledger');
 DATA.projects.forEach((p, i) => {
   const n = String(i + 1).padStart(2, '0');
@@ -1082,11 +1159,12 @@ DATA.projects.forEach((p, i) => {
 
   const hasShot = !!p.screenshot;
   const previewHtml = hasShot
-    ? `<div class="preview"><img src="${p.screenshot}" alt="${p.title} screenshot" loading="lazy"></div>`
+    ? `<div class="preview"><img src="${p.screenshot}" alt="${p.title} — project screenshot" loading="lazy"></div>`
     : '';
 
   const article = document.createElement('article');
   article.className = 'row reveal';
+  article.id = p.slug;
   article.dataset.slug = p.slug;
   article.dataset.tags = p.tags.join(' ');
   article.innerHTML = `
@@ -1099,7 +1177,7 @@ DATA.projects.forEach((p, i) => {
       <p class="desc">${p.desc}</p>
       <div class="chips">${p.chips.map(c => `<button type="button">${c}</button>`).join('')}</div>
     </div>
-    <div class="mark">→</div>
+    <div class="mark" aria-hidden="true">→</div>
     <div class="row-detail${hasShot ? '' : ' no-shot'}">
       <div>
         <div class="detail-block">
@@ -1122,7 +1200,6 @@ DATA.projects.forEach((p, i) => {
   ledger.appendChild(article);
 });
 
-// ---- EXPERIENCE ----
 const xpList = document.getElementById('xpList');
 DATA.experience.forEach(x => {
   const article = document.createElement('article');
@@ -1141,7 +1218,6 @@ DATA.experience.forEach(x => {
 });
 document.getElementById('xpCount').textContent = String(DATA.experience.length).padStart(2, '0');
 
-// ---- STACK ----
 const notebook = document.getElementById('notebook');
 function renderNotebookCol(col) {
   return `
@@ -1155,7 +1231,6 @@ function renderNotebookCol(col) {
 }
 notebook.innerHTML = renderNotebookCol(DATA.stack.left) + renderNotebookCol(DATA.stack.right);
 
-// ---- ABOUT ----
 document.getElementById('colophon').innerHTML = `
   <div>
     <div class="kicker" style="color:var(--accent)">Education</div>
@@ -1176,7 +1251,6 @@ document.getElementById('colophon').innerHTML = `
   </div>
 `;
 
-// ---- FOOTER ----
 const footContact = document.getElementById('footContact');
 const emailRow = document.createElement('button');
 emailRow.type = 'button';
@@ -1239,7 +1313,6 @@ async function copyEmail(){
 document.getElementById('copyEmailBtn').addEventListener('click', copyEmail);
 document.getElementById('copyEmailFoot').addEventListener('click', copyEmail);
 
-// reveal
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1250,7 +1323,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// tabs
 const tabs = document.querySelectorAll('.tabs a');
 const sections = [...tabs].map(a => document.querySelector(a.getAttribute('href')));
 const setActive = () => {
@@ -1262,7 +1334,6 @@ const setActive = () => {
 window.addEventListener('scroll', setActive, { passive: true });
 setActive();
 
-// expand
 const rows = document.querySelectorAll('#ledger .row');
 rows.forEach(row => {
   row.addEventListener('click', (e) => {
@@ -1288,7 +1359,6 @@ rows.forEach(row => {
   });
 });
 
-// filter
 const filterSearchEl = document.getElementById('filterSearch');
 const filterClearEl = document.getElementById('filterClear');
 const visibleCountEl = document.getElementById('visibleCount');
@@ -1358,7 +1428,6 @@ filterClearEl.addEventListener('click', () => {
 
 applyFilter();
 
-// deep link
 function openFromHash(){
   const hash = location.hash.replace('#', '');
   if (!hash) return;
@@ -1385,16 +1454,13 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ---- margin note follows scroll section ----
 const mnText = document.getElementById('mnText');
 let mnCurrent = 'work';
 let mnTimer = null;
-
 function setMarginNote(id){
   const notes = DATA.hero.marginNotes || {};
   const text = notes[id];
-  if (!text) return;
-  if (id === mnCurrent) return;
+  if (!text || id === mnCurrent) return;
   mnCurrent = id;
   mnText.classList.add('fade');
   clearTimeout(mnTimer);
@@ -1403,95 +1469,16 @@ function setMarginNote(id){
     mnText.classList.remove('fade');
   }, 220);
 }
-
-// use the same active-tab logic to drive the margin note
-const sectionIds = ['work','xp','stack','about','contact'];
 const noteObserver = new IntersectionObserver((entries) => {
-  // pick the most visible section
   const visible = entries
     .filter(e => e.isIntersecting)
     .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
   if (visible.length) setMarginNote(visible[0].target.id);
 }, { threshold: [0.15, 0.4, 0.7], rootMargin: '-30% 0px -40% 0px' });
-
-sectionIds.forEach(id => {
+['work','xp','stack','about','contact'].forEach(id => {
   const el = document.getElementById(id);
   if (el) noteObserver.observe(el);
 });
-
-// ---- guest note ----
-const GN_KEY = 'fieldnotes-guest-notes-v1';
-const gnInput = document.getElementById('gnInput');
-const gnAdd = document.getElementById('gnAdd');
-const gnNotes = document.getElementById('gnNotes');
-const gnEmpty = document.getElementById('gnEmpty');
-
-let guestNotes = [];
-try { guestNotes = JSON.parse(localStorage.getItem(GN_KEY) || '[]'); } catch { guestNotes = []; }
-
-function saveGuestNotes(){
-  try { localStorage.setItem(GN_KEY, JSON.stringify(guestNotes)); } catch {}
-}
-
-function fmtTime(ts){
-  const diff = (Date.now() - ts) / 1000;
-  if (diff < 60) return 'just now';
-  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
-  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
-  return new Date(ts).toLocaleDateString(undefined, {month:'short', day:'numeric'});
-}
-
-function renderGuestNotes(){
-  gnNotes.innerHTML = '';
-  if (!guestNotes.length) {
-    gnEmpty.style.display = 'block';
-    return;
-  }
-  gnEmpty.style.display = 'none';
-  guestNotes
-    .slice()
-    .sort((a,b) => b.ts - a.ts)
-    .forEach(n => {
-      const el = document.createElement('div');
-      el.className = 'gn-paper';
-      el.innerHTML = `
-        <button class="gn-x" type="button" aria-label="remove note">✕</button>
-        <div class="gn-text">${escapeHtml(n.text)}</div>
-        <div class="gn-meta">${fmtTime(n.ts)}</div>
-      `;
-      el.querySelector('.gn-x').addEventListener('click', () => {
-        guestNotes = guestNotes.filter(x => x.id !== n.id);
-        saveGuestNotes();
-        renderGuestNotes();
-        showToast('note removed');
-      });
-      gnNotes.appendChild(el);
-    });
-}
-
-function escapeHtml(s){
-  return s.replace(/[&<>"']/g, c => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[c]));
-}
-
-function addGuestNote(){
-  const text = gnInput.value.trim();
-  if (!text) return;
-  guestNotes.push({ id: Date.now() + Math.random().toString(36).slice(2,7), text, ts: Date.now() });
-  if (guestNotes.length > 20) guestNotes = guestNotes.slice(-20);
-  saveGuestNotes();
-  gnInput.value = '';
-  renderGuestNotes();
-  showToast('note pinned');
-}
-
-gnAdd.addEventListener('click', addGuestNote);
-gnInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') { e.preventDefault(); addGuestNote(); }
-});
-
-renderGuestNotes();
 </script>
 </body>
 </html>
