@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Debjoy Sarkar — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede3;
+    --paper2:#eae3d5;
+    --ink:#1e1c18;
+    --ink-soft:#4a463d;
+    --rule:#cfc7b5;
+    --accent:#c8402d;
+    --accent2:#2d5f4a;
+    --accent2-soft:rgba(45,95,74,.08);
+    --accent2-line:rgba(45,95,74,.28);
+    --hi:#f2d34a;
+    --serif:'Fraunces',serif;
+    --hand:'Caveat',cursive;
+    --mono:'IBM Plex Mono',monospace;
+    --sans:'Inter',sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  ::selection{background:var(--hi);color:#000}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  body::after{
+    content:"";
+    position:fixed;top:0;left:0;right:0;height:2px;
+    background:var(--accent2);
+    z-index:60;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.5 0 0 0 0 0.42 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.65;
+  }
+
+  .shell{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* ============ MASTHEAD ============ */
+  .masthead{
+    border-bottom:3px double var(--ink);
+    padding:22px 0 16px;
+    display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  .mast-left{display:flex;flex-direction:column;gap:4px}
+  .kicker{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .mast-title{
+    font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;
+    font-variation-settings:"opsz" 144, "SOFT" 0, "WONK" 1;
+  }
+  .mast-title i{font-style:italic;color:var(--accent)}
+  .mast-right{
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft);
+    text-align:right;line-height:1.7;
+  }
+  .mast-right b{color:var(--ink);font-weight:500}
+
+  /* ============ HERO ============ */
+  .hero{padding:60px 0 48px;position:relative}
+  .hero-grid{
+    display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(58px,10vw,130px);
+    line-height:.86;letter-spacing:-.035em;
+    font-variation-settings:"opsz" 144, "SOFT" 50, "WONK" 1;
+  }
+  .hero h1 .dot{color:var(--accent)}
+  .hero h1 em{
+    font-style:italic;font-weight:400;
+    font-variation-settings:"opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+  .hero-sub{
+    margin-top:32px;max-width:52ch;
+    font-size:17px;line-height:1.65;color:var(--ink-soft);
+  }
+  .hero-sub mark{
+    background:linear-gradient(180deg, transparent 55%, var(--hi) 55%, var(--hi) 92%, transparent 92%);
+    color:var(--ink);padding:0 2px;
+  }
+  .hero-sub b{color:var(--ink);font-weight:600}
+
+  .marginalia{position:relative;padding-top:16px}
+
+  /* optional portrait */
+  .portrait{
+    display:inline-block;
+    margin-bottom:22px;
+    border:1px solid var(--ink);
+    padding:6px;
+    background:#fbf7ec;
+    transform:rotate(-1.5deg);
+    box-shadow:2px 3px 0 rgba(30,28,24,.08);
+  }
+  .portrait img{
+    display:block;
+    width:90px;height:90px;object-fit:cover;
+    filter:grayscale(20%) contrast(1.02);
+  }
+  .portrait .cap{
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-soft);
+    margin-top:5px;text-align:center;
+  }
+
+  /* margin index — a small annotated contents block */
+  .margin-index{
+    border-top:1px solid var(--accent2-line);
+    padding-top:16px;
+  }
+  .mi-label{
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent2);
+    display:flex;align-items:center;gap:8px;
+    margin-bottom:14px;
+  }
+  .mi-label::after{content:"";flex:1;height:1px;background:var(--accent2-line)}
+  .mi-list{display:flex;flex-direction:column;gap:9px}
+  .mi-row{
+    display:flex;align-items:baseline;gap:10px;
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft);
+    border-bottom:1px dotted var(--rule);padding-bottom:7px;
+    text-decoration:none;transition:.2s;
+  }
+  .mi-row:hover{color:var(--accent2);border-bottom-color:var(--accent2-line)}
+  .mi-row .mi-n{
+    font-size:9.5px;letter-spacing:.12em;color:var(--accent);
+    min-width:20px;
+  }
+  .mi-row .mi-t{
+    flex:1;
+    font-family:var(--serif);font-size:14.5px;font-weight:500;
+    letter-spacing:-.005em;color:var(--ink);
+    transition:.2s;
+  }
+  .mi-row:hover .mi-t{color:var(--accent2)}
+  .mi-row .mi-c{
+    font-size:9.5px;letter-spacing:.08em;color:var(--ink-soft);
+    opacity:.7;
+  }
+
+  /* the responsive margin note */
+  .margin-note{
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid var(--accent2-line);
+    min-height:52px;
+    position:relative;
+  }
+  .mn-label{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent2);
+    opacity:.75;margin-bottom:8px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .mn-label::before{
+    content:"";width:5px;height:5px;border-radius:50%;
+    background:var(--accent2);
+    animation:mnPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes mnPulse{
+    0%,100%{opacity:.35}
+    50%{opacity:1}
+  }
+  .mn-text{
+    font-family:var(--hand);
+    font-size:22px;
+    line-height:1.25;
+    color:var(--accent2);
+    transform:rotate(-1.2deg);
+    transition:opacity .35s ease;
+  }
+  .mn-text.fade{opacity:0}
+
+  .pencil-note{
+    font-family:var(--hand);font-size:22px;line-height:1.2;
+    color:var(--accent2);margin-top:24px;transform:rotate(-1.5deg);
+    display:flex;gap:8px;align-items:flex-start;
+  }
+  .pencil-note::before{
+    content:"↳";font-family:var(--sans);font-size:24px;color:var(--accent2);
+  }
+
+  .hero-actions{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
+  }
+  .qa-btn{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;
+    border:1px solid var(--ink);background:var(--paper);color:var(--ink);
+    cursor:pointer;transition:.2s;text-decoration:none;
+    border-radius:2px;
+  }
+  .qa-btn:hover{background:var(--ink);color:var(--paper)}
+  .qa-btn.accent{border-color:var(--accent);color:var(--accent)}
+  .qa-btn.accent:hover{background:var(--accent);color:var(--paper)}
+  .qa-btn svg{width:12px;height:12px}
+
+  /* ============ TABS ============ */
+  .tabs{
+    position:sticky;top:0;z-index:40;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+    padding:0;margin-top:20px;
+    display:flex;gap:0;overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-soft);text-decoration:none;
+    padding:16px 22px;white-space:nowrap;
+    border-right:1px solid var(--rule);
+    transition:.2s;position:relative;
+  }
+  .tabs a:first-child{border-left:1px solid var(--rule)}
+  .tabs a .n{color:var(--accent);margin-right:8px;font-size:10px}
+  .tabs a:hover{background:var(--paper2);color:var(--ink)}
+  .tabs a.active{background:var(--accent2);color:var(--paper)}
+  .tabs a.active .n{color:var(--hi)}
+
+  /* ============ SECTION ============ */
+  .sec{padding:70px 0 30px}
+  .sec-head{
+    display:flex;align-items:baseline;gap:20px;margin-bottom:34px;
+    flex-wrap:wrap;
+  }
+  .sec-head .index-num{
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    color:var(--accent);padding-top:8px;min-width:44px;
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(38px,5.2vw,64px);line-height:.95;letter-spacing:-.025em;
+    font-variation-settings:"opsz" 144, "SOFT" 20, "WONK" 1;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--accent)}
+  .sec-head .count{
+    margin-left:auto;font-family:var(--mono);font-size:10.5px;
+    color:var(--ink-soft);letter-spacing:.14em;
+    border-left:1px solid var(--rule);padding-left:18px;
+  }
+
+  /* ============ FILTER BAR ============ */
+  .filter-bar{
+    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+    margin-bottom:22px;
+    padding:14px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .filter-search{
+    flex:1;min-width:180px;
+    font-family:var(--mono);font-size:12px;
+    background:transparent;
+    border:1px solid var(--rule);
+    padding:8px 12px;
+    color:var(--ink);
+    outline:none;
+    transition:.2s;
+    border-radius:2px;
+  }
+  .filter-search:focus{border-color:var(--accent2);background:rgba(255,255,255,.4)}
+  .filter-search::placeholder{color:var(--ink-soft);opacity:.7}
+  .filter-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .filter-tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;
+    padding:5px 11px;border:1px solid var(--rule);
+    background:transparent;color:var(--ink-soft);
+    cursor:pointer;transition:.2s;border-radius:2px;
+  }
+  .filter-tag:hover{border-color:var(--accent2);color:var(--accent2)}
+  .filter-tag.active{background:var(--accent2);color:var(--paper);border-color:var(--accent2)}
+  .filter-clear{
+    font-family:var(--mono);font-size:10.5px;
+    background:transparent;border:none;color:var(--accent);
+    cursor:pointer;letter-spacing:.05em;
+    display:none;padding:5px 0;
+    text-decoration:underline;text-underline-offset:3px;
+  }
+  .filter-clear.visible{display:inline-block}
+
+  /* ============ PROJECT LEDGER ============ */
+  .ledger{
+    display:flex;flex-direction:column;gap:0;
+    border-top:2px solid var(--ink);
+  }
+  .row{
+    display:grid;grid-template-columns:52px 1.15fr 1.25fr 40px;
+    gap:32px;align-items:start;
+    padding:30px 8px 30px 0;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    transition:padding .25s ease, background .25s ease;
+    cursor:pointer;
+  }
+  .row:hover{padding-left:12px;background:var(--accent2-soft)}
+  .row.open{background:var(--accent2-soft);padding-left:12px}
+  .row.hidden{display:none}
+  .row .n{
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft);
+    letter-spacing:.1em;padding-top:8px;
+  }
+  .row h3{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(21px,2.4vw,28px);line-height:1.15;letter-spacing:-.015em;
+    font-variation-settings:"opsz" 72, "SOFT" 30, "WONK" 1;
+    transition:.2s;
+  }
+  .row:hover h3{color:var(--accent)}
+  .row.open h3{color:var(--accent)}
+  .row .cap{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);
+    letter-spacing:.05em;margin-top:8px;
+  }
+  .row .desc{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:52ch}
+  .row .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .row .chips button{
+    font-family:var(--mono);font-size:10.5px;
+    padding:3px 9px;border:1px solid var(--rule);
+    border-radius:3px;color:var(--ink-soft);background:rgba(255,255,255,.5);
+    transition:.2s;cursor:pointer;
+  }
+  .row .chips button:hover{border-color:var(--accent2);color:var(--accent2);background:#fff}
+  .row .mark{
+    font-family:var(--hand);font-size:22px;color:var(--accent2);
+    text-align:right;padding-top:4px;
+    opacity:.7;transition:.2s;transform:rotate(-4deg);
+  }
+  .row:hover .mark,.row.open .mark{opacity:1;transform:rotate(0deg) scale(1.1)}
+  .row.open .mark{transform:rotate(90deg) scale(1.1)}
+
+  /* EXPANDED DETAIL */
+  .row-detail{
+    grid-column:2 / -1;
+    margin-top:22px;
+    padding-top:22px;
+    border-top:1px dashed var(--accent2-line);
+    display:none;
+    grid-template-columns:1.4fr 1fr;
+    gap:32px;
+    cursor:default;
+  }
+  .row.open .row-detail{display:grid}
+  .row-detail.no-shot{grid-template-columns:1fr}
+  @media(max-width:860px){
+    .row.open .row-detail{grid-template-columns:1fr}
+  }
+
+  .detail-block{margin-bottom:14px}
+  .detail-block .detail-label{
+    font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);
+    margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .detail-block .detail-label::after{content:"";flex:1;height:1px;background:var(--rule);max-width:40px}
+  .detail-block.impact .detail-label{color:var(--accent2)}
+  .detail-block.impact .detail-label::after{background:var(--accent2-line)}
+  .detail-block p{
+    font-size:14px;color:var(--ink-soft);line-height:1.6;
+  }
+  .detail-block p b{color:var(--ink);font-weight:600}
+
+  .preview{
+    background:#fbf7ec;
+    border:1px solid var(--rule);
+    aspect-ratio:16/10;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    overflow:hidden;
+    border-radius:2px;
+  }
+  .preview img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .detail-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .detail-links a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+    padding:6px 12px;border:1px solid var(--ink);
+    color:var(--ink);text-decoration:none;transition:.2s;
+    border-radius:2px;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .detail-links a:hover{background:var(--ink);color:var(--paper)}
+  .detail-links a.ghost{border-color:var(--rule);color:var(--ink-soft)}
+  .detail-links a.ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
+  @media(max-width:860px){
+    .row{grid-template-columns:36px 1fr;gap:14px 14px}
+    .row .desc{grid-column:2}
+    .row .chips{grid-column:2}
+    .row .mark{display:none}
+    .row-detail{grid-column:2}
+  }
+
+  .no-results{
+    padding:40px 0;text-align:center;
+    font-family:var(--hand);font-size:24px;color:var(--ink-soft);
+    display:none;
+  }
+  .no-results.visible{display:block}
+
+  /* ============ EXPERIENCE ============ */
+  .xp{border-top:1px solid var(--rule)}
+  .xp .row{
+    grid-template-columns:52px 200px 1fr auto;
+    cursor:default;
+  }
+  .xp .row:hover{padding-left:12px;background:transparent}
+  .xp .when{
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft);
+    letter-spacing:.06em;padding-top:6px;
+  }
+  .xp .role{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .xp .role em{font-style:italic;color:var(--accent);font-weight:400}
+  .xp .co{
+    font-family:var(--mono);font-size:11px;color:var(--accent2);
+    letter-spacing:.05em;margin-top:4px;
+  }
+  .xp .body{font-size:14.5px;color:var(--ink-soft);margin-top:10px;max-width:58ch}
+  .xp .badge{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+    text-transform:uppercase;padding:5px 11px;
+    border:1px solid var(--accent2);border-radius:2px;
+    color:var(--accent2);height:fit-content;margin-top:4px;
+  }
+  @media(max-width:860px){
+    .xp .row{grid-template-columns:36px 1fr}
+    .xp .when{grid-column:2}
+    .xp .role,.xp .co,.xp .body{grid-column:2}
+    .xp .badge{grid-column:2;justify-self:start}
+  }
+
+  /* ============ SKILLS ============ */
+  .notebook{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+  }
+  .nb-col{padding:34px 0;display:flex;flex-direction:column;gap:26px}
+  .nb-col:first-child{padding-right:48px;border-right:1px solid var(--rule)}
+  .nb-col:last-child{padding-left:48px}
+  .nb-label{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);
+    display:flex;align-items:center;gap:10px;
+  }
+  .nb-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+  .nb-list{display:flex;flex-direction:column;gap:10px}
+  .nb-item{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:15px;color:var(--ink);
+    border-bottom:1px dotted var(--rule);padding-bottom:8px;
+  }
+  .nb-item .t{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-.005em}
+  .nb-item .m{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em}
+  @media(max-width:820px){
+    .notebook{grid-template-columns:1fr}
+    .nb-col:first-child{padding-right:0;border-right:none;border-bottom:1px solid var(--rule)}
+    .nb-col:last-child{padding-left:0}
+  }
+
+  /* ============ LEADERSHIP ============ */
+  .pins{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px;
+  }
+  .pin{
+    background:#fbf7ec;
+    border:1px solid var(--rule);
+    padding:22px 22px 24px;
+    position:relative;
+    box-shadow:2px 4px 0 rgba(30,28,24,.06);
+    transform:rotate(-.4deg);
+    transition:.2s;
+  }
+  .pin:nth-child(2){transform:rotate(.5deg)}
+  .pin:nth-child(3){transform:rotate(.3deg)}
+  .pin:nth-child(4){transform:rotate(-.6deg)}
+  .pin:hover{transform:rotate(0) translateY(-3px);box-shadow:3px 7px 0 rgba(30,28,24,.1)}
+  .pin::before{
+    content:"";position:absolute;top:-6px;left:22px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--accent2);
+    box-shadow:inset 0 -2px 3px rgba(0,0,0,.2);
+  }
+  .pin .role{font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:-.01em}
+  .pin .org{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em;margin-top:6px}
+  @media(max-width:700px){.pins{grid-template-columns:1fr}}
+
+  /* ============ CERTS / EDU ============ */
+  .colophon{display:grid;grid-template-columns:1.2fr 1fr;gap:60px}
+  @media(max-width:820px){.colophon{grid-template-columns:1fr;gap:34px}}
+  .edu-title{
+    font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:-.01em;
+    margin-top:2px;
+  }
+  .edu-title em{font-style:italic;color:var(--accent);font-weight:400}
+  .edu-sub{font-size:14.5px;color:var(--ink-soft);margin-top:6px}
+  .edu-meta{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+    color:var(--ink-soft);margin-top:10px;
+  }
+  .cert-list{list-style:none;margin-top:12px}
+  .cert-list li{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:14.5px;padding:11px 0;border-bottom:1px dotted var(--rule);
+  }
+  .cert-list li:first-child{border-top:1px dotted var(--rule)}
+  .cert-list .by{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em}
+
+  /* ============ GUEST NOTE ============ */
+  .guest-note{
+    margin-top:40px;
+    border-top:1px dashed var(--accent2-line);
+    padding-top:28px;
+  }
+  .guest-note .gn-label{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent2);
+    margin-bottom:10px;
+  }
+  .guest-note .gn-hint{
+    font-family:var(--hand);font-size:19px;color:var(--ink-soft);
+    margin-bottom:12px;
+    line-height:1.3;
+  }
+  .gn-input-row{
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .gn-input{
+    flex:1;min-width:200px;
+    font-family:var(--mono);font-size:12px;
+    background:transparent;border:1px solid var(--rule);
+    padding:9px 12px;color:var(--ink);outline:none;
+    transition:.2s;border-radius:2px;
+  }
+  .gn-input:focus{border-color:var(--accent2);background:rgba(255,255,255,.4)}
+  .gn-input::placeholder{color:var(--ink-soft);opacity:.65}
+  .gn-btn{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    padding:9px 16px;border:1px solid var(--accent2);
+    background:var(--accent2);color:var(--paper);
+    cursor:pointer;transition:.2s;border-radius:2px;
+  }
+  .gn-btn:hover{background:transparent;color:var(--accent2)}
+  .gn-notes{
+    display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;
+  }
+  .gn-paper{
+    position:relative;
+    background:#fbf7ec;border:1px solid var(--rule);
+    padding:12px 14px 12px 16px;
+    max-width:280px;min-width:180px;
+    font-family:var(--hand);font-size:18px;line-height:1.25;
+    color:var(--ink);
+    box-shadow:1px 2px 0 rgba(30,28,24,.05);
+    transform:rotate(-.6deg);
+  }
+  .gn-paper:nth-child(2n){transform:rotate(.5deg)}
+  .gn-paper:nth-child(3n){transform:rotate(-.3deg)}
+  .gn-paper .gn-meta{
+    font-family:var(--mono);font-size:9px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-soft);
+    margin-top:8px;opacity:.7;
+  }
+  .gn-paper .gn-x{
+    position:absolute;top:4px;right:6px;
+    background:none;border:none;cursor:pointer;
+    color:var(--ink-soft);font-size:12px;
+    opacity:0;transition:.2s;line-height:1;
+    padding:2px;
+  }
+  .gn-paper:hover .gn-x{opacity:.7}
+  .gn-paper .gn-x:hover{opacity:1;color:var(--accent)}
+  .gn-empty{
+    font-family:var(--hand);font-size:16px;color:var(--ink-soft);
+    opacity:.6;margin-top:14px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    margin-top:100px;border-top:3px double var(--ink);
+    padding:36px 0 50px;
+  }
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:end;
+  }
+  .foot-big{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(40px,7vw,84px);line-height:.9;letter-spacing:-.03em;
+    font-variation-settings:"opsz" 144, "SOFT" 60, "WONK" 1;
+  }
+  .foot-big em{font-style:italic;color:var(--accent)}
+  .foot-contact{
+    display:flex;flex-direction:column;gap:2px;
+    font-family:var(--mono);font-size:12px;
+  }
+  .foot-contact a,.foot-contact button{
+    color:var(--ink);text-decoration:none;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:9px 0;border-bottom:1px solid var(--rule);
+    transition:.2s;
+    background:none;border:none;font-family:inherit;font-size:inherit;
+    cursor:pointer;text-align:left;width:100%;
+  }
+  .foot-contact a:hover,.foot-contact button:hover{padding-left:6px;color:var(--accent2)}
+  .foot-contact .k{font-size:10px;letter-spacing:.1em;color:var(--ink-soft)}
+  .foot-fine{
+    margin-top:34px;display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);
+    letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;gap:12px;
+  }
+
+  /* ============ TOAST ============ */
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translate(-50%, 80px);
+    background:var(--accent2);color:var(--paper);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    padding:11px 20px;border-radius:2px;
+    opacity:0;transition:.35s cubic-bezier(.2,.8,.2,1);
+    z-index:200;pointer-events:none;
+    box-shadow:0 8px 24px rgba(0,0,0,.2);
+    display:flex;align-items:center;gap:9px;
+  }
+  .toast.show{opacity:1;transform:translate(-50%, 0)}
+  .toast::before{content:"✓";color:var(--hi);font-size:14px}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="masthead">
+    <div class="mast-left">
+      <div class="kicker">Portfolio</div>
+      <div class="mast-title" id="mastTitle"></div>
+    </div>
+    <div class="mast-right" id="mastRight"></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1 id="heroHeadline"></h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <div class="hero-actions" id="heroActions"></div>
+      </div>
+      <div class="marginalia" id="marginalia"></div>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs">
+    <a href="#work" class="active"><span class="n">01</span>Projects</a>
+    <a href="#xp"><span class="n">02</span>Experience</a>
+    <a href="#stack"><span class="n">03</span>Stack</a>
+    <a href="#about"><span class="n">04</span>About</a>
+    <a href="#contact"><span class="n">05</span>Contact</a>
+  </nav>
+
+  <section class="sec" id="work">
+    <div class="sec-head">
+      <div class="index-num">01</div>
+      <h2>Selected <em>projects</em></h2>
+      <div class="count"><span id="visibleCount">00</span> entries</div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-search" id="filterSearch" placeholder="Search projects, stacks…" autocomplete="off"/>
+      <div class="filter-tags" id="filterTags"></div>
+      <button class="filter-clear" id="filterClear" type="button">clear ✕</button>
+    </div>
+
+    <div class="ledger" id="ledger"></div>
+    <div class="no-results" id="noResults">no projects match that filter — <span style="font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em">try clearing it</span></div>
+  </section>
+
+  <section class="sec" id="xp">
+    <div class="sec-head">
+      <div class="index-num">02</div>
+      <h2>Where I've <em>worked</em></h2>
+      <div class="count"><span id="xpCount">00</span> entries</div>
+    </div>
+    <div class="xp" id="xpList"></div>
+  </section>
+
+  <section class="sec" id="stack">
+    <div class="sec-head">
+      <div class="index-num">03</div>
+      <h2>Stack &amp; <em>tools</em></h2>
+      <div class="count">by domain</div>
+    </div>
+    <div class="notebook" id="notebook"></div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="sec-head">
+      <div class="index-num">04</div>
+      <h2>Background <em>&amp;</em> context</h2>
+      <div class="count">education · certs · campus</div>
+    </div>
+    <div class="colophon" id="colophon"></div>
+
+    <div class="guest-note">
+      <div class="gn-label">Leave a note</div>
+      <div class="gn-hint">visiting for a reason? drop a line — it stays on your screen only.</div>
+      <div class="gn-input-row">
+        <input type="text" class="gn-input" id="gnInput" placeholder="your note…" maxlength="140" autocomplete="off"/>
+        <button class="gn-btn" id="gnAdd" type="button">pin it</button>
+      </div>
+      <div class="gn-notes" id="gnNotes"></div>
+      <div class="gn-empty" id="gnEmpty">no notes yet — yours would be the first.</div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="foot-grid">
+      <div>
+        <div class="kicker" style="color:var(--accent);margin-bottom:16px">Colophon</div>
+        <div class="foot-big">Let's make<br>something <em>good.</em></div>
+      </div>
+      <div class="foot-contact" id="footContact"></div>
+    </div>
+    <div class="foot-fine" id="footFine"></div>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">copied</div>
+
+<script>
+/* ==========================================================
+   DATA
+   ========================================================== */
+const DATA = {
+  meta: {
+    name: "Debjoy Sarkar",
+    kicker: "Portfolio",
+    location: "Kolkata, IN",
+    degree: "B.Tech IT · MAKAUT · 2027",
+    email: "debjoyofficial5@gmail.com",
+    cv: "",
+    phone: "",
+    photo: "",
+    linkedin: "linkedin.com/in/debjoyysarkar",
+    linkedinUrl: "https://linkedin.com/in/debjoyysarkar",
+    github: "github.com/Debjoy26",
+    githubUrl: "https://github.com/Debjoy26"
+  },
+
+  hero: {
+    headline: "Builds<br>things that<br><em>think.</em><span class='dot'>●</span>",
+    sub: "Software developer working where web engineering meets machine intelligence — REST backends, React frontends, computer vision pipelines, and LLM tooling. Currently curious about the space between security and systems.",
+    // margin remarks — one line per section, keyed by section id.
+    // shown in the margin as the visitor scrolls.
+    marginNotes: {
+      work: "every row opens — click one.",
+      xp: "short list; most of the work lives in projects.",
+      stack: "the honest version, with rough edges.",
+      about: "school, certs, and what I do off-hours.",
+      contact: "easiest through email."
+    },
+    pencilNote: "available for<br>internships &amp; collabs"
+  },
+
+  projects: [
+    {
+      slug: "chatbot",
+      title: "AI Chatbot with Docker & Auth",
+      cap: "Local LLM · multi-user · containerized",
+      desc: "Chatbot running Llama 3.2 locally through Ollama, wrapped in Docker Compose with Google OAuth 2.0 for multi-user sessions. Includes model switching, persistent history and prompt-engineered personalities.",
+      tags: ["Python", "Docker", "AI/ML", "Full-stack"],
+      chips: ["Docker", "Streamlit", "Ollama", "OAuth 2.0"],
+      what: "A self-hosted chatbot that runs a local LLM with proper auth. Users sign in with Google, chat history persists per account, and they can swap between models and personalities without touching the backend.",
+      role: "<b>Solo build</b> — architecture, Docker Compose orchestration, OAuth flow, Streamlit UI, and prompt engineering for the personality presets.",
+      impact: "Runs entirely on local hardware with zero API cost. Multi-user auth without a backend server — the container is the backend.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "sensitur",
+      title: "SensiTour — AI Travel Guide",
+      cap: "Ongoing · ML interface complete",
+      desc: "Generates personalized travel plans from user preferences. Layering on sign-language translation, crowd prediction, offline accessibility and safety alerts.",
+      tags: ["React", "Django", "AI/ML", "Full-stack"],
+      chips: ["React", "Django", "REST", "AI APIs"],
+      what: "Takes a user's preferences, constraints and accessibility needs, then generates a day-by-day travel plan. Flags crowded spots, translates sign-language input, and works offline once a plan is saved.",
+      role: "<b>Team lead & ML interface</b> — designed the REST contract, built the React preference flow, and wired the ML service behind it.",
+      impact: "ML interface complete. Accessibility and offline modes in progress.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "plant-health",
+      title: "Plant Health via Thermal Imaging",
+      cap: "Final year · ongoing",
+      desc: "Hardware-software system analyzing plant stress from RGB and thermal imagery. Synthetic datasets built from the Crop Water Stress Index, feeding a CNN classifier.",
+      tags: ["Python", "Django", "AI/ML", "Computer Vision"],
+      chips: ["CNN", "OpenCV", "Django", "CWSI"],
+      what: "Captures paired RGB and thermal images of plants, computes a Crop Water Stress Index, and classifies stress level with a CNN. The result appears in a Django dashboard.",
+      role: "<b>Solo build</b> — dataset pipeline, CWSI synthetic generation, CNN training, and the Django serving layer.",
+      impact: "Thermal imagery catches stress before visible symptoms. Early detection can cut water waste in smallholder farming.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "servicedesk",
+      title: "Mini ServiceDesk",
+      cap: "IT support ticket system",
+      desc: "Full-stack ticketing — create, assign, filter, track to resolution. Layered Spring Boot REST APIs over MySQL, with validation, exception handling and JUnit5 tests in progress.",
+      tags: ["Java", "React", "Full-stack"],
+      chips: ["Java", "Spring Boot", "React", "MySQL", "JUnit5"],
+      what: "Ticket lifecycle from creation to resolution — assign to agents, filter by status/priority, track SLAs. Role-based views for agents vs. requesters.",
+      role: "<b>Solo build</b> — Spring Boot layered architecture (controller → service → repository), REST contract, React frontend, and JUnit5 test suite.",
+      impact: "~40 REST endpoints, validated request bodies, centralized exception handler, and pagination on the ticket list.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "warehouse",
+      title: "Warehouse Intelligence Platform",
+      cap: "forecasting · 3D digital twin",
+      desc: "Inventory prediction, risk analysis and operational recommendations, comparing ML models. Three.js renders a live digital-twin view for warehouse monitoring.",
+      tags: ["Python", "AI/ML"],
+      chips: ["XGBoost", "TensorFlow", "Scikit-learn", "Three.js"],
+      what: "Forecasts inventory demand with XGBoost, flags stockout risk, and renders a live 3D twin of the warehouse floor with Three.js.",
+      role: "<b>Team member</b> — model comparison (XGBoost vs. TensorFlow vs. Scikit-learn), feature engineering, and Three.js integration.",
+      impact: "Forecasting + spatial view in one dashboard lets ops teams see where the problem is, not just that there is one.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "yolo",
+      title: "YOLO Object Detection",
+      cap: "real-time computer vision",
+      desc: "Real-time detection and classification using the YOLO model, piped through OpenCV for frame processing, visualization and live workflows.",
+      tags: ["Python", "AI/ML", "Computer Vision"],
+      chips: ["Python", "OpenCV", "YOLO"],
+      what: "Detects and labels objects in a live camera feed at interactive framerates. OpenCV handles the pipeline; YOLO does the detection.",
+      role: "<b>Solo build</b> — pipeline, frame handling, visualization overlays, and tuning for CPU-only inference.",
+      impact: "Maintains usable framerates on modest hardware by batching frames and skipping inference when the scene is stable.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "iei",
+      title: "IEI Student Chapter Website",
+      cap: "full-stack · deployed",
+      desc: "Django + React site for the IEI chapter with dynamic event updates over REST, SEO improvements and deployment across Vercel & Render.",
+      tags: ["Django", "React", "Full-stack"],
+      chips: ["Django", "React", "REST", "Vercel"],
+      what: "The chapter's public face — event listings, announcements, and an admin panel for officers. REST APIs let the React frontend pull fresh data without a redeploy.",
+      role: "<b>Developer</b> — Django backend, REST API design, React frontend, and deployment across Vercel (frontend) and Render (backend).",
+      impact: "SEO improvements lifted discoverability; event updates no longer require code changes.",
+      live: "",
+      source: "",
+      screenshot: ""
+    },
+    {
+      slug: "code-and-seek",
+      title: "Code and Seek",
+      cap: "event game platform",
+      desc: "Team-based coding challenges and technical games, with Monaco Editor driving multi-language code compilation inside the browser.",
+      tags: ["React", "Full-stack"],
+      chips: ["React", "Firebase", "Monaco", "Vercel"],
+      what: "Runs team-based coding events — puzzles that unlock as teams solve challenges. Monaco Editor gives participants a familiar IDE in the browser.",
+      role: "<b>Developer</b> — React frontend, Firebase integration for real-time team state, and Monaco Editor wiring for multi-language compilation.",
+      impact: "Used for a campus technical event; teams solved challenges in-browser without local setups.",
+      live: "",
+      source: "",
+      screenshot: ""
+    }
+  ],
+
+  filterTags: ["Python","Java","React","Django","Docker","AI/ML","Computer Vision","Full-stack"],
+
+  experience: [
+    {
+      when: "INTERNSHIP",
+      role: "AI/ML <em>Intern</em>",
+      company: "Oracleh Labs",
+      body: "Worked with the AI/ML team on real-world problem-solving workflows — preprocessing, model pipelines, testing and AI component integration across the deployment lifecycle.",
+      badge: "AI / ML"
+    },
+    {
+      when: "TRAINING",
+      role: "Cyber Security <em>&amp; Ethical Hacking</em>",
+      company: "ISOEH",
+      body: "Hands-on training across ethical hacking fundamentals, vulnerability assessment, Kali Linux, Nmap and Metasploit.",
+      badge: "SECURITY"
+    }
+  ],
+
+  stack: {
+    left: {
+      label: "Engineering",
+      items: [
+        ["Python","primary"],
+        ["Java · C","comfortable"],
+        ["JavaScript · TS-adjacent","web"],
+        ["C# · .NET","learning"],
+        ["Django · Spring Boot","backend"],
+        ["React · Streamlit","frontend"],
+        ["REST API design","frequent"],
+        ["Docker · Git · Azure","tooling"]
+      ]
+    },
+    right: {
+      label: "Intelligence & security",
+      items: [
+        ["OpenCV · NumPy · Pandas","vision / data"],
+        ["CNNs · ML pipelines","modeling"],
+        ["LLMs · Ollama · GenAI","applied"],
+        ["Prompt engineering","practical"],
+        ["Kali · Nmap · Metasploit","security toolkit"],
+        ["Vulnerability assessment","in training"]
+      ]
+    }
+  },
+
+  education: {
+    title: "B.Tech <em>— Information Technology</em>",
+    school: "RCC Institute of Information Technology · MAKAUT",
+    meta: "Graduating 2027 · Kolkata"
+  },
+
+  certifications: [
+    ["Cloud Computing","NPTEL"],
+    ["Ethical Hacking","NPTEL"],
+    ["AI Certification","INTEL"]
+  ],
+
+  leadership: [
+    ["Student Convenor","IEI STUDENT CHAPTER · RCCIIT"],
+    ["PR & Management Associate","GDG ON CAMPUS · RCCIIT"],
+    ["Team Leader","SMART INDIA HACKATHON 2024"],
+    ["Team Leader","AMERICAN CENTER · U.S. CONSULATE"]
+  ],
+
+  footer: {
+    big: "Let's make<br>something <em>good.</em>",
+    fine: "© 2025 Debjoy Sarkar"
+  }
+};
+
+/* ==========================================================
+   RENDER
+   ========================================================== */
+const nameParts = DATA.meta.name.split(' ');
+document.getElementById('mastTitle').innerHTML = `${nameParts[0]} <i>${nameParts.slice(1).join(' ')}</i>`;
+document.getElementById('mastRight').innerHTML = `
+  <div><b>${DATA.meta.location}</b></div>
+  <div>${DATA.meta.degree}</div>
+`;
+
+document.getElementById('heroHeadline').innerHTML = DATA.hero.headline;
+document.getElementById('heroSub').innerHTML = DATA.hero.sub;
+
+const heroActions = document.getElementById('heroActions');
+const emailBtn = document.createElement('button');
+emailBtn.className = 'qa-btn accent';
+emailBtn.type = 'button';
+emailBtn.id = 'copyEmailBtn';
+emailBtn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="10" height="10" rx="1"/><path d="M5 5h6v6"/></svg> Copy email`;
+heroActions.appendChild(emailBtn);
+
+if (DATA.meta.cv) {
+  const a = document.createElement('a');
+  a.className = 'qa-btn';
+  a.href = DATA.meta.cv;
+  a.download = '';
+  a.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M4 6l4 4 4-4M3 13h10"/></svg> Résumé`;
+  heroActions.appendChild(a);
+}
+
+const contactLink = document.createElement('a');
+contactLink.className = 'qa-btn';
+contactLink.href = '#contact';
+contactLink.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg> Get in touch`;
+heroActions.appendChild(contactLink);
+
+// ---- MARGINALIA (portrait + contents + live margin note + pencil) ----
+const marginalia = document.getElementById('marginalia');
+let marg = '';
+
+if (DATA.meta.photo) {
+  marg += `
+    <div class="portrait">
+      <img src="${DATA.meta.photo}" alt="${DATA.meta.name}">
+      <div class="cap">${DATA.meta.name}</div>
+    </div>
+  `;
+}
+
+// contents block — counts are derived from DATA, always accurate
+const contents = [
+  { id: 'work',   n: '01', t: 'Projects',   c: String(DATA.projects.length).padStart(2,'0') },
+  { id: 'xp',     n: '02', t: 'Experience', c: String(DATA.experience.length).padStart(2,'0') },
+  { id: 'stack',  n: '03', t: 'Stack',      c: `${DATA.stack.left.items.length + DATA.stack.right.items.length} items` },
+  { id: 'about',  n: '04', t: 'About',      c: `${DATA.leadership.length} roles` },
+  { id: 'contact',n: '05', t: 'Contact',    c: '' }
+];
+
+marg += `
+  <div class="margin-index">
+    <div class="mi-label">Contents</div>
+    <div class="mi-list">
+      ${contents.map(c => `
+        <a class="mi-row" href="#${c.id}">
+          <span class="mi-n">${c.n}</span>
+          <span class="mi-t">${c.t}</span>
+          <span class="mi-c">${c.c}</span>
+        </a>
+      `).join('')}
+    </div>
+  </div>
+`;
+
+marg += `
+  <div class="margin-note">
+    <div class="mn-label">Margin</div>
+    <div class="mn-text" id="mnText">a small portfolio, kept in ink.</div>
+  </div>
+`;
+
+if (DATA.hero.pencilNote) {
+  marg += `<div class="pencil-note">${DATA.hero.pencilNote}</div>`;
+}
+
+marginalia.innerHTML = marg;
+
+// ---- FILTER TAGS ----
+const filterTagsEl = document.getElementById('filterTags');
+DATA.filterTags.forEach(t => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-tag';
+  btn.type = 'button';
+  btn.dataset.tag = t;
+  btn.textContent = t;
+  filterTagsEl.appendChild(btn);
+});
+
+// ---- PROJECTS ----
+const ledger = document.getElementById('ledger');
+DATA.projects.forEach((p, i) => {
+  const n = String(i + 1).padStart(2, '0');
+  const detailLinks = [];
+  if (p.live) detailLinks.push(`<a href="${p.live}" target="_blank" rel="noopener">↗ Live</a>`);
+  if (p.source) detailLinks.push(`<a href="${p.source}" target="_blank" rel="noopener" class="ghost">Source</a>`);
+
+  const hasShot = !!p.screenshot;
+  const previewHtml = hasShot
+    ? `<div class="preview"><img src="${p.screenshot}" alt="${p.title} screenshot" loading="lazy"></div>`
+    : '';
+
+  const article = document.createElement('article');
+  article.className = 'row reveal';
+  article.dataset.slug = p.slug;
+  article.dataset.tags = p.tags.join(' ');
+  article.innerHTML = `
+    <div class="n">${n}</div>
+    <div>
+      <h3>${p.title}</h3>
+      <div class="cap">${p.cap}</div>
+    </div>
+    <div>
+      <p class="desc">${p.desc}</p>
+      <div class="chips">${p.chips.map(c => `<button type="button">${c}</button>`).join('')}</div>
+    </div>
+    <div class="mark">→</div>
+    <div class="row-detail${hasShot ? '' : ' no-shot'}">
+      <div>
+        <div class="detail-block">
+          <div class="detail-label">What it does</div>
+          <p>${p.what}</p>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">My role</div>
+          <p>${p.role}</p>
+        </div>
+        <div class="detail-block impact">
+          <div class="detail-label">Impact</div>
+          <p>${p.impact}</p>
+        </div>
+        ${detailLinks.length ? `<div class="detail-links">${detailLinks.join('')}</div>` : ''}
+      </div>
+      ${previewHtml}
+    </div>
+  `;
+  ledger.appendChild(article);
+});
+
+// ---- EXPERIENCE ----
+const xpList = document.getElementById('xpList');
+DATA.experience.forEach(x => {
+  const article = document.createElement('article');
+  article.className = 'row reveal';
+  article.innerHTML = `
+    <div class="n">—</div>
+    <div class="when">${x.when}</div>
+    <div>
+      <div class="role">${x.role}</div>
+      <div class="co">${x.company}</div>
+      <p class="body">${x.body}</p>
+    </div>
+    <div class="badge">${x.badge}</div>
+  `;
+  xpList.appendChild(article);
+});
+document.getElementById('xpCount').textContent = String(DATA.experience.length).padStart(2, '0');
+
+// ---- STACK ----
+const notebook = document.getElementById('notebook');
+function renderNotebookCol(col) {
+  return `
+    <div class="nb-col">
+      <div class="nb-label">${col.label}</div>
+      <div class="nb-list">
+        ${col.items.map(([t, m]) => `<div class="nb-item"><span class="t">${t}</span><span class="m">${m}</span></div>`).join('')}
+      </div>
+    </div>
+  `;
+}
+notebook.innerHTML = renderNotebookCol(DATA.stack.left) + renderNotebookCol(DATA.stack.right);
+
+// ---- ABOUT ----
+document.getElementById('colophon').innerHTML = `
+  <div>
+    <div class="kicker" style="color:var(--accent)">Education</div>
+    <div class="edu-title">${DATA.education.title}</div>
+    <div class="edu-sub">${DATA.education.school}</div>
+    <div class="edu-meta">${DATA.education.meta}</div>
+
+    <div class="kicker" style="color:var(--accent);margin-top:36px">Certifications</div>
+    <ul class="cert-list">
+      ${DATA.certifications.map(([n, by]) => `<li><span>${n}</span><span class="by">${by}</span></li>`).join('')}
+    </ul>
+  </div>
+  <div>
+    <div class="kicker" style="color:var(--accent)">Leadership & campus</div>
+    <div class="pins">
+      ${DATA.leadership.map(([r, o]) => `<div class="pin"><div class="role">${r}</div><div class="org">${o}</div></div>`).join('')}
+    </div>
+  </div>
+`;
+
+// ---- FOOTER ----
+const footContact = document.getElementById('footContact');
+const emailRow = document.createElement('button');
+emailRow.type = 'button';
+emailRow.id = 'copyEmailFoot';
+emailRow.innerHTML = `<span>${DATA.meta.email}</span> <span class="k">COPY EMAIL</span>`;
+footContact.appendChild(emailRow);
+
+if (DATA.meta.phone) {
+  const a = document.createElement('a');
+  a.href = `tel:${DATA.meta.phone.replace(/\s/g,'')}`;
+  a.innerHTML = `${DATA.meta.phone} <span class="k">CALL</span>`;
+  footContact.appendChild(a);
+}
+if (DATA.meta.linkedin) {
+  const a = document.createElement('a');
+  a.href = DATA.meta.linkedinUrl;
+  a.target = '_blank'; a.rel = 'noopener';
+  a.innerHTML = `${DATA.meta.linkedin} <span class="k">LINKEDIN</span>`;
+  footContact.appendChild(a);
+}
+if (DATA.meta.github) {
+  const a = document.createElement('a');
+  a.href = DATA.meta.githubUrl;
+  a.target = '_blank'; a.rel = 'noopener';
+  a.innerHTML = `${DATA.meta.github} <span class="k">GITHUB</span>`;
+  footContact.appendChild(a);
+}
+
+document.getElementById('footFine').innerHTML = `
+  <span>${DATA.footer.fine}</span>
+  <span>${DATA.meta.location}</span>
+`;
+
+/* ==========================================================
+   BEHAVIOUR
+   ========================================================== */
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){
+  if (msg) toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+async function copyEmail(){
+  try {
+    await navigator.clipboard.writeText(DATA.meta.email);
+    showToast('email copied');
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = DATA.meta.email;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    showToast('email copied');
+  }
+}
+document.getElementById('copyEmailBtn').addEventListener('click', copyEmail);
+document.getElementById('copyEmailFoot').addEventListener('click', copyEmail);
+
+// reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// tabs
+const tabs = document.querySelectorAll('.tabs a');
+const sections = [...tabs].map(a => document.querySelector(a.getAttribute('href')));
+const setActive = () => {
+  const y = window.scrollY + 140;
+  let idx = 0;
+  sections.forEach((s, i) => { if (s && s.offsetTop <= y) idx = i; });
+  tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+};
+window.addEventListener('scroll', setActive, { passive: true });
+setActive();
+
+// expand
+const rows = document.querySelectorAll('#ledger .row');
+rows.forEach(row => {
+  row.addEventListener('click', (e) => {
+    if (e.target.closest('.chips button')) return;
+    if (e.target.closest('.detail-links a')) return;
+    if (e.target.closest('.preview img')) return;
+
+    const isOpen = row.classList.contains('open');
+    rows.forEach(r => r.classList.remove('open'));
+    if (!isOpen) {
+      row.classList.add('open');
+      history.replaceState(null, '', '#' + row.dataset.slug);
+    } else {
+      history.replaceState(null, '', location.pathname);
+    }
+  });
+
+  row.querySelectorAll('.chips button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setFilterByText(btn.textContent.trim());
+    });
+  });
+});
+
+// filter
+const filterSearchEl = document.getElementById('filterSearch');
+const filterClearEl = document.getElementById('filterClear');
+const visibleCountEl = document.getElementById('visibleCount');
+const noResultsEl = document.getElementById('noResults');
+
+let activeTags = new Set();
+let searchTerm = '';
+
+function matchesFilter(row){
+  const rowTags = (row.dataset.tags || '').split(/\s+/);
+  const tagMatch = activeTags.size === 0 || [...activeTags].every(t => rowTags.includes(t));
+  if (!tagMatch) return false;
+  if (!searchTerm) return true;
+  const haystack = (
+    row.querySelector('h3')?.textContent + ' ' +
+    row.querySelector('.desc')?.textContent + ' ' +
+    (row.dataset.tags || '')
+  ).toLowerCase();
+  return haystack.includes(searchTerm);
+}
+
+function applyFilter(){
+  let visible = 0;
+  rows.forEach(row => {
+    const match = matchesFilter(row);
+    row.classList.toggle('hidden', !match);
+    if (match) visible++;
+    else row.classList.remove('open');
+  });
+  visibleCountEl.textContent = String(visible).padStart(2, '0');
+  noResultsEl.classList.toggle('visible', visible === 0);
+  filterClearEl.classList.toggle('visible', activeTags.size > 0 || !!searchTerm);
+  filterTagsEl.querySelectorAll('.filter-tag').forEach(btn => {
+    btn.classList.toggle('active', activeTags.has(btn.dataset.tag));
+  });
+}
+
+function setFilterByText(label){
+  activeTags.clear();
+  searchTerm = '';
+  filterSearchEl.value = '';
+  activeTags.add(label);
+  applyFilter();
+  document.getElementById('work').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+filterTagsEl.querySelectorAll('.filter-tag').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.tag;
+    if (activeTags.has(t)) activeTags.delete(t);
+    else activeTags.add(t);
+    applyFilter();
+  });
+});
+
+filterSearchEl.addEventListener('input', (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  applyFilter();
+});
+
+filterClearEl.addEventListener('click', () => {
+  activeTags.clear();
+  searchTerm = '';
+  filterSearchEl.value = '';
+  applyFilter();
+});
+
+applyFilter();
+
+// deep link
+function openFromHash(){
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+  const row = document.querySelector(`#ledger .row[data-slug="${hash}"]`);
+  if (!row) return;
+  row.classList.remove('hidden');
+  rows.forEach(r => r.classList.remove('open'));
+  row.classList.add('open');
+  setTimeout(() => {
+    const y = row.getBoundingClientRect().top + window.scrollY - 120;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }, 60);
+}
+window.addEventListener('load', openFromHash);
+window.addEventListener('hashchange', openFromHash);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const open = document.querySelector('#ledger .row.open');
+    if (open) {
+      open.classList.remove('open');
+      history.replaceState(null, '', location.pathname);
+    }
+  }
+});
+
+// ---- margin note follows scroll section ----
+const mnText = document.getElementById('mnText');
+let mnCurrent = 'work';
+let mnTimer = null;
+
+function setMarginNote(id){
+  const notes = DATA.hero.marginNotes || {};
+  const text = notes[id];
+  if (!text) return;
+  if (id === mnCurrent) return;
+  mnCurrent = id;
+  mnText.classList.add('fade');
+  clearTimeout(mnTimer);
+  mnTimer = setTimeout(() => {
+    mnText.textContent = text;
+    mnText.classList.remove('fade');
+  }, 220);
+}
+
+// use the same active-tab logic to drive the margin note
+const sectionIds = ['work','xp','stack','about','contact'];
+const noteObserver = new IntersectionObserver((entries) => {
+  // pick the most visible section
+  const visible = entries
+    .filter(e => e.isIntersecting)
+    .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+  if (visible.length) setMarginNote(visible[0].target.id);
+}, { threshold: [0.15, 0.4, 0.7], rootMargin: '-30% 0px -40% 0px' });
+
+sectionIds.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) noteObserver.observe(el);
+});
+
+// ---- guest note ----
+const GN_KEY = 'fieldnotes-guest-notes-v1';
+const gnInput = document.getElementById('gnInput');
+const gnAdd = document.getElementById('gnAdd');
+const gnNotes = document.getElementById('gnNotes');
+const gnEmpty = document.getElementById('gnEmpty');
+
+let guestNotes = [];
+try { guestNotes = JSON.parse(localStorage.getItem(GN_KEY) || '[]'); } catch { guestNotes = []; }
+
+function saveGuestNotes(){
+  try { localStorage.setItem(GN_KEY, JSON.stringify(guestNotes)); } catch {}
+}
+
+function fmtTime(ts){
+  const diff = (Date.now() - ts) / 1000;
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  return new Date(ts).toLocaleDateString(undefined, {month:'short', day:'numeric'});
+}
+
+function renderGuestNotes(){
+  gnNotes.innerHTML = '';
+  if (!guestNotes.length) {
+    gnEmpty.style.display = 'block';
+    return;
+  }
+  gnEmpty.style.display = 'none';
+  guestNotes
+    .slice()
+    .sort((a,b) => b.ts - a.ts)
+    .forEach(n => {
+      const el = document.createElement('div');
+      el.className = 'gn-paper';
+      el.innerHTML = `
+        <button class="gn-x" type="button" aria-label="remove note">✕</button>
+        <div class="gn-text">${escapeHtml(n.text)}</div>
+        <div class="gn-meta">${fmtTime(n.ts)}</div>
+      `;
+      el.querySelector('.gn-x').addEventListener('click', () => {
+        guestNotes = guestNotes.filter(x => x.id !== n.id);
+        saveGuestNotes();
+        renderGuestNotes();
+        showToast('note removed');
+      });
+      gnNotes.appendChild(el);
+    });
+}
+
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+
+function addGuestNote(){
+  const text = gnInput.value.trim();
+  if (!text) return;
+  guestNotes.push({ id: Date.now() + Math.random().toString(36).slice(2,7), text, ts: Date.now() });
+  if (guestNotes.length > 20) guestNotes = guestNotes.slice(-20);
+  saveGuestNotes();
+  gnInput.value = '';
+  renderGuestNotes();
+  showToast('note pinned');
+}
+
+gnAdd.addEventListener('click', addGuestNote);
+gnInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); addGuestNote(); }
+});
+
+renderGuestNotes();
+</script>
+</body>
+</html>
